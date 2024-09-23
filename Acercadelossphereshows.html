@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dislikes, Likes y Comentarios</title>
+    <meta charset="UTF-8"> <!-- Etiqueta meta para especificar la codificación del documento -->
+    <style>
+        body {
+            background-image: url(opinion.png); /* Fondo con el cuadrado hecho en Paint */
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: "Comic Sans MS", cursive, sans-serif; /* Cambiamos la fuente a Comic Sans MS */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ajustamos la altura del cuerpo para centrar verticalmente */
+            margin: 0; /* Eliminamos el margen predeterminado del cuerpo */
+            padding: 0; /* Eliminamos el relleno predeterminado del cuerpo */
+            position: relative; /* Establecemos posición relativa para el cuerpo */
+        }
+
+        .cuadrado {
+            background-color: #ffd000; /* Amarillo medio naranja en formato hexadecimal */
+            width: 100%; /* Ancho del cuadrado al 100% del ancho de la ventana */
+            height: 100px; /* Altura del cuadrado */
+            position: absolute; /* Posición absoluta para ubicar el cuadrado */
+            top: 0; /* Distancia desde la parte superior */
+            left: 0; /* Distancia desde la izquierda */
+            border: 2px solid black; /* Borde del cuadrado */
+            box-sizing: border-box; /* Incluimos el borde en el tamaño total del cuadrado */
+        }
+
+        .texto {
+            font-size: 1.5em; /* Tamaño del texto reducido para que encaje dentro del cuadrado */
+            color: black; /* Color del texto */
+            position: absolute; /* Posición absoluta para ubicar el texto dentro del cuadrado */
+            top: 10%; /* Ajustamos la posición vertical del texto */
+            left: 50%; /* Ajustamos la posición horizontal del texto */
+            transform: translate(-50%, -50%); /* Centramos el texto tanto horizontal como verticalmente */
+            text-align: center; /* Centramos horizontalmente el texto */
+            z-index: 1; /* Para que el texto esté sobre el cuadrado */
+            margin-top: 0; /* Eliminamos el margen superior del texto */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cuadrado"></div>
+    <div class="texto">
+        <!-- Aquí puedes poner el texto -->
+        Ve aquí los dislikes, likes y comentarios de algunos Sphere Shows
+    </div>
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barra de desplazamiento vertical</title>
+<style>
+    /* Estilo para el contenedor del área de desplazamiento */
+    .scroll-container {
+        width: 100vw; /* Ancho del contenedor igual al ancho de la ventana */
+        height: 1700px; /* Altura del contenedor fija */
+        overflow-y: auto; /* Habilita la barra de desplazamiento vertical si es necesario*/
+        position: relative; /* Posiciona el contenedor */
+    }
+
+    /* Estilo para el contenedor interno */
+    .scroll-content {
+        width: calc(100% - 20px); /* Ancho del contenedor interno (menos el ancho de la barra de desplazamiento) */
+        height:1500px; /* Altura del contenedor interno mayor para permitir desplazamiento */
+        padding-right: 20px; /* Añade un relleno a la derecha para evitar el salto repentino */
+        box-sizing: border-box; /* Incluye el relleno en el ancho total */
+    }
+
+    /* Estilo para el área de contenido */
+    .content {
+        width: 100%; /* Ancho del área de contenido */
+        background-color: white; /* Color de fondo del área de contenido */
+    }
+</style>
+</head>
+<body>
+    <div class="scroll-container">
+        <div class="scroll-content">
+            <div class="content">

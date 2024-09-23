@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntellectHub</title>
+    <style>
+        /* Aquí puedes agregar tus propios estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-y: auto; /* Restaurar la barra de desplazamiento vertical */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center; /* Alineación centrada */
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 20%;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: block;
+            margin-bottom: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            width: 80%;
+            overflow: auto; /* Restaurar la barra de desplazamiento para el contenido principal */
+            margin: 0 auto; /* Centrar el contenido principal */
+        }
+        .featured-article {
+            background-color: #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        /* Estilos para el portal de Ciencia y Tecnología */
+        .portal {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .portal h2 {
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .portal ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .portal ul li {
+            margin-bottom: 10px;
+        }
+        .portal ul li a {
+            color: #444;
+            text-decoration: none;
+        }
+        /* Estilos para el aviso de derechos de autor */
+        .copyright {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a IntellectHub, la enciclopedia libre peruana. </h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="ciencia.html">Ciencia y Tecnología</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="arte.html">Arte y Cultura</a></li>
+            <li><a href="geografia.html">Geografía</a></li>
+            <li><a href="salud.html">Salud y Bienestar</a></li>
+            <li><a href="miscelanea.html">Miscelánea</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="featured-article">
+            <h2>Artículo Destacado</h2>
+            <p>Este es el artículo destacado de la semana. ¡No te lo pierdas!</p>
+            <p>Imperio romano: El imperio romano fue un extenso imperio que abarcó Iberia, Galia, el norte de África, etc, ademas este imperio tuvo varios conflictos con la Persia Sasánida .</p>
+            <p>Para más información, visita nuestro <a href="articulo-destacado.html">artículo completo</a>.</p>
+            <img src="Imperio romano.png" alt="Imagen Destacada">
+        </div>
+        <!-- Contenido de la página principal -->
+        <p>Bienvenido a mi Wikipedia personal. Selecciona una categoría para explorar.</p>
+        <p>Este es un párrafo adicional para aumentar el contenido y probar la barra de desplazamiento.</p>
+        <p>Este es otro párrafo adicional para aumentar el contenido y probar la barra de desplazamiento.</p>
+        <p>Y aquí hay otro párrafo adicional para aumentar el contenido y probar la barra de desplazamiento.</p>
+        <p>Este es un párrafo más para asegurarnos de que hay suficiente contenido para mostrar la barra de desplazamiento.</p>
+        
+        <!-- Portal de Ciencia y Tecnología -->
+        <div class="portal">
+            <h2>Portales</h2>
+            <ul>
+                <li><a href="biologia.html">Biología</a></li>
+                <li><a href="fisica.html">Física</a></li>
+                <li><a href="geografia.html">Geografia</a></li>
+                <li><a href="historia.html">Historia</a></li>
+              <li><a href="CBallscomics.html">Ir a CBcomics</a></li>
+                
+                <!-- Agrega más enlaces a subcategorías o artículos relevantes aquí -->
+            </ul>
+        </div>
+    </main>
+
+
+
+
+
+        <h2>Encuestas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pregunta</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>¿Cuál es tu comida favorita?</td>
+                    <td>Pizza, Hamburguesa, Sushi</td>
+                </tr>
+                <tr>
+                    <td>¿Prefieres el verano o el invierno?</td>
+                    <td>Verano, Invierno</td>
+                </tr>
+                <!-- Agrega más filas para más preguntas -->
+
+        <h2>Porcentaje de respuestas</h2>
+        <img src="respuestas.png" alt="Gráfico de porcentaje de respuestas" style="max-width: 500px;">
+
+            </tbody>
+        </table>
+    </main>
+
+
+    <!-- Aviso de derechos de autor -->
+    <div class="copyright">
+        <p>Derechos de autor © [Año de creación] IntellectHub, la enciclopedia libre peruana. Todos los derechos reservados.</p>
+        <p>El contenido de este sitio web, incluyendo pero no limitado a texto, imágenes, gráficos y otros materiales, está protegido por las leyes de derechos de autor y otras leyes de propiedad intelectual. Estos materiales no pueden ser reproducidos, distribuidos, transmitidos, exhibidos, publicados o transmitidos de ninguna manera o por ningún medio, incluyendo, pero no limitado a, medios electrónicos, mecánicos, fotocopiado, grabación u otros medios, sin el previo consentimiento por escrito del titular de los derechos de autor.</p>
+        <p>Todos los nombres de productos y compañías mencionados en este sitio son marcas comerciales de sus respectivos propietarios y están aquí únicamente con fines informativos. El uso de estos nombres de productos y compañías no implica afiliación, respaldo o patrocinio, a menos que se especifique explícitamente.</p>
+        <p>Para obtener permisos para reproducir cualquier parte de este sitio web, comuníquese con nosotros a través de [tu dirección de contacto] para obtener más información.</p>
+        <p>Gracias por su comprensión y cumplimiento.</p>
+    </div>
+</body>
+</html>

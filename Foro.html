@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBALLS COMICS Foro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        #message-list {
+            margin-bottom: 20px;
+        }
+
+        .message {
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .timestamp {
+            font-size: 0.8em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CBALLS COMICS Foro BETA</h1>
+    </header>
+
+    <section class="content">
+        <div id="message-list">
+            <!-- Los mensajes se mostrarán aquí -->
+        </div>
+        <div id="message-form">
+            <textarea id="message-input" placeholder="Escribe tu mensaje aquí..."></textarea>
+            <input type="text" id="author-input" placeholder="Nombre (opcional)">
+            <button onclick="addMessage()">Publicar Mensaje</button>
+        </div>
+        <button onclick="clearMessages()">Limpiar Mensajes</button>
+    </section>
+
+    <footer>
+        <p>© 2024 CBALLS COMICS. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Obtener mensajes almacenados en localStorage o inicializar un array vacío
+        let messages = JSON.parse(localStorage.getItem('messages')) || [];
+
+        // Función para agregar un nuevo mensaje
+        function addMessage() {
+            // Obtener el contenido del input de mensaje
+            let messageInput = document.getElementById('message-input');
+            let messageContent = messageInput.value.trim();
+
+            // Obtener el nombre del autor
+            let authorInput = document.getElementById('author-input');
+            let authorName = authorInput.value.trim();
+
+            // Si el contenido del mensaje no está vacío
+            if (messageContent !== '') {
+                // Crear un objeto de mensaje con contenido, autor (si está presente) y fecha actual
+                let message = {
+                    content: messageContent,
+                    author: authorName || 'Anónimo',
+                    timestamp: new Date().toLocaleString()
+                };
+
+                // Agregar el mensaje al array de mensajes
+                messages.push(message);
+
+                // Actualizar los mensajes guardados en localStorage
+                localStorage.setItem('messages', JSON.stringify(messages));
+
+                // Actualizar la lista de mensajes
+                displayMessages();
+
+                // Limpiar el input de mensaje y el input de autor
+                messageInput.value = '';
+                authorInput.value = '';
+            } else {
+                alert('Por favor, escribe algo antes de publicar.');
+            }
+        }
+
+        // Función para mostrar los mensajes en la página
+        function displayMessages() {
+            let messageList = document.getElementById('message-list');
+            messageList.innerHTML = '';
+
+            // Iterar sobre los mensajes y crear elementos de lista para cada uno
+            messages.forEach(function(message, index) {
+                let listItem = document.createElement('div');
+                listItem.innerHTML = `
+                    <div class="message">
+                        <p><strong>${message.author}</strong>: ${message.content}</p>
+                        <span class="timestamp">${message.timestamp}</span>
+                        <button onclick="deleteMessage(${index})">Eliminar</button>
+                    </div>
+                `;
+                messageList.appendChild(listItem);
+            });
+        }
+
+        // Función para eliminar un mensaje
+        function deleteMessage(index) {
+            // Eliminar el mensaje del array de mensajes
+            messages.splice(index, 1);
+
+            // Actualizar los mensajes guardados en localStorage
+            localStorage.setItem('messages', JSON.stringify(messages));
+
+            // Actualizar la lista de mensajes
+            displayMessages();
+        }
+
+        // Función para limpiar todos los mensajes
+        function clearMessages() {
+            // Limpiar el array de mensajes
+            messages = [];
+
+            // Limpiar los mensajes guardados en localStorage
+            localStorage.removeItem('messages');
+
+            // Actualizar la lista de mensajes
+            displayMessages();
+        }
+
+        // Mostrar mensajes al cargar la página
+        displayMessages();
+    </script>
+</body>
+</html>
+

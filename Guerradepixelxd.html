@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guerra de Píxeles</title>
+  <style>
+    #pixel-grid {
+      border-collapse: collapse;
+    }
+
+    #pixel-grid td {
+      width: 10px;
+      height: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .color-picker {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <table id="pixel-grid"></table>
+  <div class="color-picker">
+    <input type="color" id="color">
+    <button onclick="clearCanvas()">Borrar</button>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const pixelGrid = document.getElementById("pixel-grid");
+
+      // Crea el grid de píxeles
+      for (let i = 0; i < 40; i++) {
+        const row = document.createElement("tr");
+        for (let j = 0; j < 40; j++) {
+          const pixel = document.createElement("td");
+          pixel.setAttribute("id", "pixel-" + i + "-" + j);
+          pixel.addEventListener("click", function() {
+            this.style.backgroundColor = document.getElementById("color").value;
+            saveState(); // Guarda el estado después de pintar un píxel
+          });
+          row.appendChild(pixel);
+        }
+        pixelGrid.appendChild(row);
+      }
+
+      // Restaura el estado guardado al cargar la página
+      restoreState();
+    });
+
+    function clearCanvas() {
+      const pixels = document.querySelectorAll("#pixel-grid td");
+      pixels.forEach(pixel => {
+        pixel.style.backgroundColor = "#fff"; // Cambia el color de fondo a blanco
+      });
+      saveState(); // Guarda el estado después de limpiar el lienzo
+    }
+
+    function saveState() {
+      const pixels = document.querySelectorAll("#pixel-grid td");
+      const pixelState = {};
+      pixels.forEach(pixel => {
+        const id = pixel.getAttribute("id");
+        const color = pixel.style.backgroundColor;
+        pixelState[id] = color;
+      });
+      localStorage.setItem("pixelState", JSON.stringify(pixelState));
+    }
+
+    function restoreState() {
+      const pixelState = JSON.parse(localStorage.getItem("pixelState"));
+      if (pixelState) {
+        for (let id in pixelState) {
+          const pixel = document.getElementById(id);
+          if (pixel) {
+            pixel.style.backgroundColor = pixelState[id];
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

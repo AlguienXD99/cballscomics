@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Iniciar Sesión (PD: aquí no es donde se crean las cuentas, ve hacia el final de la página de inicio y encontrará el verdadero enlace)</h2>
+        <form id="login-form">
+            <input type="text" id="username" name="username" placeholder="Nombre de Usuario" required>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+        <div id="continue-options" style="display: none;">
+            <h3>¿Qué te gustaría hacer?</h3>
+            <button id="continue-btn">Continuar</button>
+            <button id="logout-btn">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script>
+        // Verificar si ya hay datos de inicio de sesión guardados en el almacenamiento local
+        const savedUsername = localStorage.getItem('username');
+        const savedPassword = localStorage.getItem('password');
+
+        if (savedUsername && savedPassword) {
+            document.getElementById('username').value = savedUsername;
+            document.getElementById('password').value = savedPassword;
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('continue-options').style.display = 'block';
+        }
+
+        // Manejar el envío del formulario de inicio de sesión
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe
+
+            // Obtener los valores de nombre de usuario y contraseña del formulario
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Guardar los datos de inicio de sesión en el almacenamiento local
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+
+            // Mostrar las opciones de continuar y ocultar el formulario de inicio de sesión
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('continue-options').style.display = 'block';
+        });
+
+        // Manejar la opción de cerrar sesión
+        document.getElementById('logout-btn').addEventListener('click', function() {
+            // Limpiar los datos de inicio de sesión del almacenamiento local
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+
+            // Redirigir a la página de inicio
+            window.location.href = 'CBallscomics.html';
+        });
+
+        // Manejar la opción de continuar (puedes cambiar la URL a donde quieras redirigir)
+        document.getElementById('continue-btn').addEventListener('click', function() {
+            // Redireccionar a otra página
+            window.location.href = 'Cuenta.html';
+        });
+    </script>
+</body>
+</html>
