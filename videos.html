@@ -3,103 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBalls Comics - Video Upload</title>
+    <title>CBalls Comics - Videos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
 
-        .upload-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
-        }
-
-        h1 {
+        .header {
+            background-color: #b19cd9;
             color: #333;
+            text-align: center;
+            padding: 20px;
+            position: relative;
         }
 
-        .upload-container label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 1rem;
-            color: #555;
+        .header h1 {
+            margin: 0;
+            font-size: 2rem;
         }
 
-        .upload-container input[type="file"] {
-            display: block;
-            margin: 10px auto 20px;
-            font-size: 1rem;
+        .header p {
+            margin: 10px 0 0;
         }
 
-        .upload-container button {
+        .header .button-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .header .button-container button {
             background-color: #007BFF;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             font-size: 1rem;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        .upload-container button:hover {
+        .header .button-container button:hover {
             background-color: #0056b3;
         }
 
-        .upload-container .message {
-            margin-top: 15px;
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .video-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .video-card .video-placeholder {
+            background-color: #ddd;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+
+        .video-card .title {
+            font-weight: bold;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        .video-card .uploaded-by {
+            color: #777;
             font-size: 0.9rem;
-            color: green;
         }
     </style>
 </head>
 <body>
-    <div class="upload-container">
-        <h1>CBalls Comics - Upload Your Video</h1>
-        <form id="uploadForm">
-            <label for="videoFile">Select a video to upload:</label>
-            <input type="file" id="videoFile" name="videoFile" accept="video/*" required>
-            <button type="submit">Upload</button>
-        </form>
-        <p class="message" id="uploadMessage"></p>
+    <div class="header">
+        <h1>CBalls Comics - Videos</h1>
+        <p>boton que sirve para llenar un formulario de google y compartir videos</p>
+        <div class="button-container">
+            <button onclick="window.location.href='https://docs.google.com/forms/d/e/your-google-form-id/viewform'">Subir Video</button>
+        </div>
     </div>
 
-    <script>
-        const uploadForm = document.getElementById('uploadForm');
-        const uploadMessage = document.getElementById('uploadMessage');
-
-        uploadForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form from refreshing the page
-
-            const videoFile = document.getElementById('videoFile').files[0];
-
-            if (!videoFile) {
-                uploadMessage.textContent = 'Please select a file to upload.';
-                uploadMessage.style.color = 'red';
-                return;
-            }
-
-            // Simulate an upload process
-            uploadMessage.textContent = 'Uploading...';
-            uploadMessage.style.color = 'black';
-
-            setTimeout(() => {
-                uploadMessage.textContent = 'Your video has been uploaded successfully!';
-                uploadMessage.style.color = 'green';
-            }, 2000);
-        });
-    </script>
+    <div class="gallery">
+        <div class="video-card">
+            <div class="video-placeholder">video</div>
+            <div class="title">titulo</div>
+            <div class="uploaded-by">subido por:</div>
+        </div>
+        <div class="video-card">
+            <div class="video-placeholder">video</div>
+            <div class="title">titulo</div>
+            <div class="uploaded-by">subido por:</div>
+        </div>
+        <div class="video-card">
+            <div class="video-placeholder">video</div>
+            <div class="title">titulo</div>
+            <div class="uploaded-by">subido por:</div>
+        </div>
+        <div class="video-card">
+            <div class="video-placeholder">video</div>
+            <div class="title">titulo</div>
+            <div class="uploaded-by">subido por:</div>
+        </div>
+        <div class="video-card">
+            <div class="video-placeholder">video</div>
+            <div class="title">titulo</div>
+            <div class="uploaded-by">subido por:</div>
+        </div>
+        <div class="video-card">
+            <div class="video-placeholder">video</div>
+            <div class="title">titulo</div>
+            <div class="uploaded-by">subido por:</div>
+        </div>
+    </div>
 </body>
 </html>
