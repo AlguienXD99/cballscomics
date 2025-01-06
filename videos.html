@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBalls Comics - Video Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .upload-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .upload-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .upload-container input[type="file"] {
+            display: block;
+            margin: 10px auto 20px;
+            font-size: 1rem;
+        }
+
+        .upload-container button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .upload-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .upload-container .message {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>CBalls Comics - Upload Your Video</h1>
+        <form id="uploadForm">
+            <label for="videoFile">Select a video to upload:</label>
+            <input type="file" id="videoFile" name="videoFile" accept="video/*" required>
+            <button type="submit">Upload</button>
+        </form>
+        <p class="message" id="uploadMessage"></p>
+    </div>
+
+    <script>
+        const uploadForm = document.getElementById('uploadForm');
+        const uploadMessage = document.getElementById('uploadMessage');
+
+        uploadForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from refreshing the page
+
+            const videoFile = document.getElementById('videoFile').files[0];
+
+            if (!videoFile) {
+                uploadMessage.textContent = 'Please select a file to upload.';
+                uploadMessage.style.color = 'red';
+                return;
+            }
+
+            // Simulate an upload process
+            uploadMessage.textContent = 'Uploading...';
+            uploadMessage.style.color = 'black';
+
+            setTimeout(() => {
+                uploadMessage.textContent = 'Your video has been uploaded successfully!';
+                uploadMessage.style.color = 'green';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
