@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postingtatles</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #1DA1F2;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 24px;
+        }
+
+        .navbar nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        .navbar nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sección Principal */
+        .home {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .home h2 {
+            font-size: 36px;
+        }
+
+        .home p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #1DA1F2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #0d8ecf;
+        }
+
+        /* Secciones de formulario */
+        section {
+            margin: 50px 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <header>
+        <div class="navbar">
+            <h1>Mi Red Social</h1>
+            <nav>
+                <a href="#home">Inicio</a>
+                <a href="#register">Registrarse</a>
+                <a href="#post">Publicar Post</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Bienvenida -->
+    <section id="home" class="home">
+        <h2>Bienvenidos a Mi Red Social</h2>
+        <p>Conecta con personas y comparte tus pensamientos al instante.</p>
+        <a href="#register" class="button">Registrarse</a>
+        <a href="#post" class="button">Publicar un Post</a>
+    </section>
+
+    <!-- Sección de Registro -->
+    <section id="register" class="register">
+        <h2>Formulario de Registro</h2>
+        <p>Regístrate para unirte a la red social y compartir tus ideas.</p>
+        <a href="ENLACE_DEL_FORMULARIO_DE_REGISTRO" class="button">Registrarse</a>
+    </section>
+
+    <!-- Sección de Publicación de Post -->
+    <section id="post" class="post">
+        <h2>Publicar un Nuevo Post</h2>
+        <p>Comparte lo que estás pensando.</p>
+        <a href="ENLACE_DEL_FORMULARIO_DE_POST" class="button">Publicar</a>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Mi Red Social</p>
+    </footer>
+
+    <script>
+        // Confirmación cuando el usuario hace clic en "Registrarse"
+        document.querySelector('a[href="ENLACE_DEL_FORMULARIO_DE_REGISTRO"]').addEventListener('click', function() {
+            alert("Redirigiendo al formulario de registro...");
+        });
+
+        // Confirmación cuando el usuario hace clic en "Publicar"
+        document.querySelector('a[href="ENLACE_DEL_FORMULARIO_DE_POST"]').addEventListener('click', function() {
+            alert("Redirigiendo al formulario de publicación...");
+        });
+    </script>
+</body>
+</html>
