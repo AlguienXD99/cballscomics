@@ -93,6 +93,33 @@
             color: #666;
         }
 
+        /* Estilo para los posts */
+        .post-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .post-item {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-item p {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .post-item .author {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+
         /* Pie de página */
         footer {
             background-color: #333;
@@ -114,6 +141,7 @@
                 <a href="#home">Inicio</a>
                 <a href="#register">Registrarse</a>
                 <a href="#post">Publicar Post</a>
+                <a href="#recent-posts">Ver Posts Recientes</a>
             </nav>
         </div>
     </header>
@@ -138,6 +166,26 @@
         <h2>Publicar un Nuevo Post</h2>
         <p>Comparte lo que estás pensando.</p>
         <a href="ENLACE_DEL_FORMULARIO_DE_POST" class="button">Publicar</a>
+    </section>
+
+    <!-- Sección de Posts Recientes -->
+    <section id="recent-posts">
+        <h2>Posts Recientes</h2>
+        <p>Aquí puedes ver los posts más recientes de la red social.</p>
+        <ul class="post-list">
+            <li class="post-item">
+                <p>¡Hola, mundo! Este es mi primer post en esta red social.</p>
+                <p class="author">Publicado por: Usuario1</p>
+            </li>
+            <li class="post-item">
+                <p>Acabo de registrarme y ya quiero compartir algo genial con todos.</p>
+                <p class="author">Publicado por: Usuario2</p>
+            </li>
+            <li class="post-item">
+                <p>¡Qué emoción estar en una nueva red social, espero conocer a muchos de ustedes!</p>
+                <p class="author">Publicado por: Usuario3</p>
+            </li>
+        </ul>
     </section>
 
     <!-- Pie de página -->
